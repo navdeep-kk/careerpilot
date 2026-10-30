@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CareerPilot, a professional career planning dashboard by Navdeep Kaur.">
+<title>CareerPilot | Navdeep Kaur</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">CP</div>
+      <div><strong>CareerPilot</strong><small>by Navdeep Kaur</small></div>
+    </div>
+    <nav class="side-nav">
+      <button class="nav-item active" data-view="dashboard"><span>⌂</span> Dashboard</button>
+      <button class="nav-item" data-view="resume"><span>▣</span> Resume Builder</button>
+      <button class="nav-item" data-view="skills"><span>◆</span> Skill Explorer</button>
+      <button class="nav-item" data-view="jobs"><span>◈</span> Job Tracker</button>
+      <button class="nav-item" data-view="interview"><span>?</span> Interview Lab</button>
+      <button class="nav-item" data-view="planner"><span>◷</span> Career Planner</button>
+      <button class="nav-item" data-view="analytics"><span>⌁</span> Analytics</button>
+      <button class="nav-item" data-view="resources"><span>▤</span> Resources</button>
+    </nav>
+    <div class="side-bottom">
+      <div class="profile-mini"><div class="avatar">NK</div><div><b>Navdeep Kaur</b><small>Project Owner</small></div></div>
+      <button class="theme-btn" id="themeBtn">☾ Toggle theme</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="mobile-menu" id="mobileMenu">☰</button>
+      <div>
+        <span class="eyebrow">CAREER MANAGEMENT PLATFORM</span>
+        <h1 id="pageTitle">Dashboard</h1>
+      </div>
+      <div class="top-actions"><span class="date" id="today"></span><button class="bell" id="bell">♢</button></div>
+    </header>
+
+    <div class="views">
+      <section class="view active" id="dashboard">
+        <div class="welcome">
+          <div><span class="eyebrow">GOOD PROGRESS, NAVDEEP</span><h2>Build your next professional chapter.</h2><p>CareerPilot brings your skills, applications, interview practice and career goals into one focused workspace.</p></div>
+          <button class="primary" data-go="planner">Open career plan →</button>
+        </div>
+        <div class="metric-row">
+          <article><span>Profile strength</span><strong id="profileStat">82%</strong><i><em style="width:82%"></em></i><small>Almost interview-ready</small></article>
+          <article><span>Applications</span><strong id="appStat">6</strong><small>2 interviews scheduled</small><b class="up">+2 this week</b></article>
+          <article><span>Skills tracked</span><strong id="skillStat">8</strong><small>3 currently learning</small><b class="up">+1 mastered</b></article>
+          <article><span>Interview score</span><strong id="scoreStat">76%</strong><small>Last mock interview</small><b class="up">+8% improvement</b></article>
+        </div>
+        <div class="grid-two">
+          <article class="panel">
+            <div class="panel-head"><div><span class="eyebrow">THIS WEEK</span><h3>Career activity</h3></div><span class="pill green">On track</span></div>
+            <div class="activity-chart">
+              <div class="bar" style="height:45%"><span>Mon</span></div><div class="bar" style="height:65%"><span>Tue</span></div><div class="bar" style="height:52%"><span>Wed</span></div><div class="bar" style="height:80%"><span>Thu</span></div><div class="bar" style="height:72%"><span>Fri</span></div><div class="bar" style="height:38%"><span>Sat</span></div><div class="bar today-bar" style="height:88%"><span>Sun</span></div>
+            </div>
+          </article>
+          <article class="panel">
+            <div class="panel-head"><div><span class="eyebrow">NEXT ACTIONS</span><h3>Priority queue</h3></div></div>
+            <div class="todo-list">
+              <label><input type="checkbox" class="dash-task"> Tailor resume for product role <small>Today</small></label>
+              <label><input type="checkbox" class="dash-task"> Practise STAR interview answers <small>Tomorrow</small></label>
+              <label><input type="checkbox" class="dash-task"> Complete JavaScript assessment <small>Fri</small></label>
+              <label><input type="checkbox" class="dash-task"> Update portfolio projects <small>Sun</small></label>
+            </div>
+          </article>
+        </div>
+        <article class="panel spotlight"><div><span class="eyebrow">CAREER INSIGHT</span><h3>Your strongest advantage is consistency.</h3><p>You have maintained activity across applications, skills and interview practice. Keep one focused career task on your calendar each day.</p></div><div class="insight-number">04<small>focus areas</small></div></article>
+      </section>
+
+      <section class="view" id="resume">
+        <div class="section-title"><div><span class="eyebrow">RESUME BUILDER</span><h2>Create a sharper professional profile.</h2></div><button class="secondary" id="saveResume">Save profile</button></div>
+        <div class="resume-layout">
+          <form class="panel form-card" id="resumeForm">
+            <label>Full name<input id="rName" value="Navdeep Kaur"></label>
+            <label>Professional title<input id="rTitle" value="Computer Science Student & Web Developer"></label>
+            <label>Email<input id="rEmail" value="navdeep@example.com"></label>
+            <label>About you<textarea id="rAbout">Creative technology learner focused on building useful, responsive web experiences.</textarea></label>
+            <label>Core skills<input id="rSkills" value="HTML5, CSS3, JavaScript, UI Design, Problem Solving"></label>
+            <button class="primary" type="submit">Update preview</button>
+          </form>
+          <article class="resume-preview" id="resumePreview">
+            <div class="resume-top"><div><h3 id="pName">Navdeep Kaur</h3><p id="pTitle">Computer Science Student & Web Developer</p></div><span>PROFILE</span></div>
+            <hr><h4>PROFILE</h4><p id="pAbout">Creative technology learner focused on building useful, responsive web experiences.</p>
+            <h4>CORE SKILLS</h4><div id="pSkills" class="skill-tags"></div>
+            <h4>CONTACT</h4><p id="pEmail">navdeep@example.com</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="skills">
+        <div class="section-title"><div><span class="eyebrow">SKILL EXPLORER</span><h2>Map the skills that move you forward.</h2></div><input class="search" id="skillSearch" placeholder="Search skills..."></div>
+        <div class="filter-row" id="skillFilters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="Technical">Technical</button><button class="filter" data-filter="Professional">Professional</button><button class="filter" data-filter="Creative">Creative</button></div>
+        <div class="skill-grid" id="skillGrid"></div>
+      </section>
+
+      <section class="view" id="jobs">
+        <div class="section-title"><div><span class="eyebrow">JOB TRACKER</span><h2>Keep every opportunity organised.</h2></div><button class="primary" id="addJob">+ Add application</button></div>
+        <div class="job-summary"><span>6 total</span><span>2 interviews</span><span>2 applications</span><span>1 offer stage</span></div>
+        <div class="panel table-panel"><table><thead><tr><th>Company</th><th>Role</th><th>Status</th><th>Applied</th><th>Priority</th></tr></thead><tbody id="jobBody"></tbody></table></div>
+      </section>
+
+      <section class="view" id="interview">
+        <div class="section-title"><div><span class="eyebrow">INTERVIEW LAB</span><h2>Practise before the real conversation.</h2></div><button class="primary" id="newQuestion">New question</button></div>
+        <div class="interview-layout">
+          <article class="question-card"><span class="question-label">QUESTION <b id="qNumber">01</b></span><h3 id="question">Tell me about a project you are proud of.</h3><p id="hint">Use the STAR structure: situation, task, action and result.</p><textarea id="answer" placeholder="Write your answer here..."></textarea><div class="question-actions"><button class="secondary" id="showHint">Show coaching tip</button><button class="primary" id="scoreAnswer">Score answer</button></div><div id="feedback" class="feedback hidden"></div></article>
+          <aside class="panel score-card"><span class="eyebrow">MOCK SCORE</span><strong id="mockScore">76%</strong><div class="score-line"><i style="width:76%"></i></div><p>Keep answers specific, measurable and connected to outcomes.</p><div class="coach"><b>Coach tip</b><span>Use one concrete result whenever possible.</span></div></aside>
+        </div>
+      </section>
+
+      <section class="view" id="planner">
+        <div class="section-title"><div><span class="eyebrow">CAREER PLANNER</span><h2>Turn ambition into a practical roadmap.</h2></div></div>
+        <div class="roadmap">
+          <article class="road-step complete"><span>01</span><div><small>COMPLETED</small><h3>Build foundation</h3><p>Strengthen HTML, CSS and JavaScript fundamentals.</p></div><b>✓</b></article>
+          <article class="road-step current"><span>02</span><div><small>IN PROGRESS</small><h3>Build portfolio</h3><p>Publish three polished projects and document the learning process.</p><div class="mini-progress"><i style="width:68%"></i></div></div><b>68%</b></article>
+          <article class="road-step"><span>03</span><div><small>NEXT</small><h3>Interview preparation</h3><p>Complete five mock interviews and refine project explanations.</p></div><b>→</b></article>
+          <article class="road-step"><span>04</span><div><small>FUTURE</small><h3>Launch applications</h3><p>Apply to carefully selected roles with tailored applications.</p></div><b>○</b></article>
+        </div>
+      </section>
+
+      <section class="view" id="analytics">
+        <div class="section-title"><div><span class="eyebrow">ANALYTICS</span><h2>Understand your career momentum.</h2></div></div>
+        <div class="analytics-grid">
+          <article class="panel big-analytics"><span class="eyebrow">READINESS INDEX</span><strong>82</strong><small>/ 100</small><div class="circle-progress"><i></i></div><p>Strong foundation with portfolio and interview practice as the main growth opportunities.</p></article>
+          <article class="panel"><span class="eyebrow">SKILL MIX</span><div class="horizontal"><label>Technical <i><b style="width:82%"></b></i><em>82%</em></label><label>Communication <i><b style="width:70%"></b></i><em>70%</em></label><label>Problem solving <i><b style="width:88%"></b></i><em>88%</em></label><label>Design <i><b style="width:64%"></b></i><em>64%</em></label></div></article>
+          <article class="panel"><span class="eyebrow">APPLICATION FUNNEL</span><div class="funnel"><b style="width:100%">6 Applications</b><b style="width:70%">4 Responses</b><b style="width:45%">2 Interviews</b><b style="width:25%">1 Offer Stage</b></div></article>
+        </div>
+      </section>
+
+      <section class="view" id="resources">
+        <div class="section-title"><div><span class="eyebrow">RESOURCE LIBRARY</span><h2>Useful tools for your next step.</h2></div></div>
+        <div class="resource-grid">
+          <article><span>01</span><h3>STAR Framework</h3><p>A simple structure for answering behavioural interview questions with evidence.</p><button class="secondary resource-btn">Open guide</button></article>
+          <article><span>02</span><h3>Portfolio Checklist</h3><p>Review projects, case studies, contact details, accessibility and responsive behaviour.</p><button class="secondary resource-btn">Open checklist</button></article>
+          <article><span>03</span><h3>Application Quality</h3><p>Tailor your summary, skills and project evidence to the role instead of sending the same CV everywhere.</p><button class="secondary resource-btn">Read guide</button></article>
+          <article><span>04</span><h3>Networking Notes</h3><p>Keep conversations specific, respectful and focused on learning rather than asking for a job immediately.</p><button class="secondary resource-btn">Read guide</button></article>
+          <article><span>05</span><h3>Project Story Builder</h3><p>Explain what you built, why you built it, what you learned and what you would improve.</p><button class="secondary resource-btn">Start builder</button></article>
+          <article><span>06</span><h3>Weekly Review</h3><p>Look back at wins, unfinished tasks and the single most important career action for next week.</p><button class="secondary resource-btn">Review now</button></article>
+        </div>
+      </section>
+    </div>
+    <footer><span><b>CareerPilot</b> · Owner / Developer: Navdeep Kaur</span><span>HTML5 · CSS3 · Vanilla JavaScript</span></footer>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
